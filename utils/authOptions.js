@@ -11,7 +11,7 @@ export const authOptions = {
       authorization: {
         params: {
           prompt: "consent",
-          acces_type: "offline",
+          access_type: "offline",
           response_type: "code",
         },
       },
@@ -39,7 +39,7 @@ export const authOptions = {
       return true;
     },
     //Modifies the session obj
-    async sessionStorage({ session }) {
+    async session({ session }) {
       //1. get user from db
       const user = await User.findOne({ email: session.user.email });
       //2. assign the user id to the session
