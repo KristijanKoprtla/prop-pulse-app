@@ -154,7 +154,7 @@ function Navbar() {
               </Link>
               {/* <!-- Profile dropdown button --> */}
               <div className="relative ml-3">
-                <div>
+                <div className="flex items-center gap-2">
                   <button
                     type="button"
                     className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -175,6 +175,14 @@ function Navbar() {
                       />
                     }
                   </button>
+                  {session && (
+                    <p
+                      onClick={() => setIsProfileMenuOpen((prev) => !prev)}
+                      className="text-white cursor-pointer"
+                    >
+                      {session.user.name}
+                    </p>
+                  )}
                 </div>
 
                 {/* <!-- Profile dropdown --> */}
